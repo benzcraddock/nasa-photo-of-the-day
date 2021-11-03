@@ -14,6 +14,7 @@ function App() {
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=YU9FlyfIfgXA6fstyHQdVAbzLvMpjYdZqJpNheV1`)
     .then(res => {
+      console.log(res.data);
       setNasaData(res.data);
     })
     .catch(err => {
@@ -24,10 +25,10 @@ function App() {
   
   return (
     <div className="App">
-      <p>
+      {/* <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      </p> */}
       <ComponentOne nasaAPI={nasaData} />
     </div>
   );
