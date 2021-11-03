@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 // import aaxios lib from node_modules
 import axios from "axios"
-
 import "./App.css";
-
 import ComponentOne from "./ComponentOne";
+import ComponentTwo from "./ComponentTwo";
 
 function App() {
   const [nasaData, setNasaData] = useState('');
@@ -14,7 +13,7 @@ function App() {
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=YU9FlyfIfgXA6fstyHQdVAbzLvMpjYdZqJpNheV1`)
     .then(res => {
-      console.log(res.data);
+      // console.log(res.data);
       setNasaData(res.data);
     })
     .catch(err => {
@@ -30,6 +29,7 @@ function App() {
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
       </p> */}
       <ComponentOne nasaAPI={nasaData} />
+      <ComponentTwo nasaAPI={nasaData} />
     </div>
   );
 }

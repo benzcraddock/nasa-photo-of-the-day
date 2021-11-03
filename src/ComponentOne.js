@@ -5,11 +5,9 @@ const ComponentOne = props => {
     return (
         <div className='container'>
             <h2>Title: {nasaAPI.title}</h2>
-                <div> </div>
             <p>Date: {nasaAPI.date}</p>
-            <p>Explanation: {nasaAPI.explanation}</p>
             <p>Copyright: {nasaAPI.copyright}</p>
-            <img src = {nasaAPI.url}/>
+            <img src={nasaAPI.url} alt="NASA's investment"/>
         </div>
     )
 }
